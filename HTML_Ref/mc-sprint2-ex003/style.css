@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Calibri', 'Open Sans', sans-serif;
+}
+
+h2, h3, h4, h5, h6 {
+    font-family: 'Fredoka One', cursive;
+}
+
+h1 {
+    display: none;
+}
+
+section {
+    text-align: center;
+}
+
+section h2 {
+    padding: 20px 0;
+}
+
+section > a {
+    padding: 20px 0;
+    text-decoration: none;
+}
+
+/*================================================================
+                            INICIO - NAV
+================================================================*/
+header {
+    max-width: 1300px;
+}
+
+nav {
+    background-color: #ff9933;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    font-size: 1.3em;
+    height: 2.3em;
+    align-items: center;
+}
+
+nav ul li:last-child {
+    font-family: 'Fredoka One', cursive;
+}
+
+nav a {
+    text-decoration: none;
+    color: #361a0c;
+    font-weight: bold;
+    padding: .65em 3em;
+}
+
+nav a:hover {
+    background-color: #a70000;
+    color: #fff;
+    box-shadow: 0 2px #800000;
+}
+
+/*================================================================
+                            FIM - NAV
+================================================================*/
+
+#logo-area {
+    background-image: url(img/fundo_logo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 20px;
+}
