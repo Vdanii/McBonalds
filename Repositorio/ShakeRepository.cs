@@ -4,16 +4,17 @@ using MCBONALDSMVC.Models;
 
 namespace MCBONALDSMVC.Repositorio
 {
-    public class HamburguerRepository
+    public class ShakeRepository
     {
-        private const string PATH = "Database/Hamburguer.csv";
-        public double ObterPreco(string nomeHamburguer)
+        private const string PATH = "Database/Shake.csv";
+        
+        public double ObterPreco(string nomeShake)
         {
             var lista = ObterTodos();
             var preco = 0.0;
             foreach (var item in lista)
             {
-                if(item.Nome.Equals(nomeHamburguer))
+                if(item.Nome.Equals(nomeShake))
                 {
                     preco = item.Preco;
                     break;
@@ -22,20 +23,20 @@ namespace MCBONALDSMVC.Repositorio
             }
             return preco;
         }
-        public List<Hamburguer> ObterTodos()
+        public List<Shake> ObterTodos()
         {
-            List<Hamburguer> Hamburgueres = new List<Hamburguer>();
+            List<Shake> Shakes = new List<Shake>();
             string[] linhas = File.ReadAllLines(PATH);
-            foreach(var linha in linhas)
+            foreach (var linha in linhas)
             {
-                Hamburguer h = new Hamburguer();
+                Shake s = new Shake();
                 string [] dados = linha.Split(";");
-                h.Nome = dados[0];
-                h.Preco = double.Parse(dados[1]);
-                Hamburgueres.Add(h);
+                s.Nome = dados[0];
+                s.Preco = double.Parse(dados[1]);
+                Shakes.Add(s);
             }
 
-            return Hamburgueres;
+            return Shakes;
         }
     }
 }

@@ -6,6 +6,7 @@ namespace MCBONALDSMVC.Controllers
 {
     public class ClienteController : Controller
     {
+        private ClienteRepository clienteRepository = new ClienteRepository;
         [HttpGet]
         public IActionResult Login()
         {
@@ -21,6 +22,11 @@ namespace MCBONALDSMVC.Controllers
                 System.Console.WriteLine("email");
                 System.Console.WriteLine("senha");
                 System.Console.WriteLine("===================");
+
+                var usuario = form["email"];
+                var senha = form["senha"];
+
+                var cliente = clienteRepository.ObterPor(usuario);
 
                 return View("Sucesso");
             }

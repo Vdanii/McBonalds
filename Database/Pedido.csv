@@ -4,3 +4,5 @@ cliente_nome=marina souza;cliente_endereco=;cliente_telefone=11 9525255252;clien
 cliente_nome=marina souza;cliente_endereco=;cliente_telefone=11 9525255252;cliente_email=marinaxx.s@hotmail.com;hamburguer_nome=furioso;hamburguer_preco=0;shake_nome=chocolate;shake_preco=0;data_pedido=14/11/2019 16:12:31;preco_total=0
 cliente_nome=;cliente_endereco=;cliente_telefone=;cliente_email=;hamburguer_nome=furioso;hamburguer_preco=0;shake_nome=chocolate;shake_preco=0;data_pedido=14/11/2019 16:42:51;preco_total=0
 cliente_nome=;cliente_endereco=;cliente_telefone=;cliente_email=;hamburguer_nome=furioso;hamburguer_preco=0;shake_nome=;shake_preco=0;data_pedido=14/11/2019 16:42:58;preco_total=0
+cliente_nome=Dani Vitoria;cliente_endereco=;cliente_telefone=55885093;cliente_email=vdanielly53@gmail.co;hamburguer_nome=Fusioso;hamburguer_preco=0;shake_nome=Biscoito;shake_preco=0;data_pedido=18/11/2019 15:55:04;preco_total=0
+cliente_nome=Dani Vitoria;cliente_endereco=;cliente_telefone=55885093;cliente_email=vdanielly53@gmail.co;hamburguer_nome=Fusioso;hamburguer_preco=9,99;shake_nome=Biscoito;shake_preco=9,99;data_pedido=18/11/2019 17:24:05;preco_total=19,98
