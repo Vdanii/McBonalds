@@ -1,4 +1,4 @@
-namespace MCBONALDSMVC.Models
+namespace McBonaldsMVC.Models
 {
     public class Hamburguer : Produto
     {
@@ -6,10 +6,6 @@ namespace MCBONALDSMVC.Models
         {
 
         }
-        public Hamburguer(string nome, double preco)
-        {
-            this.Nome = nome;
-            this.Preco = preco;
-        }
+
     }
 }

@@ -1,19 +1,24 @@
 using System;
-using MCBONALDSMVC.Models;
-using MCBONALDSMVC.Models.Repositario;
+using McBonaldsMVC.Models;
+using McBonaldsMVC.Repositories;
+using McBonaldsMVC.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace MCBONALDSMVC.Controllers
+namespace McBonaldsMVC.Controllers
 {
-    public class CadastroController : Controller
+    public class CadastroController : AbstractController
     {
 
-        ClienteRepositariy clienteRepositariy = new ClienteRepositariy();
-        
+        ClienteRepository clienteRepository = new ClienteRepository();
         public IActionResult Index()
         {
-            return View();
+            return View(new BaseViewModel()
+            {
+                NomeView = "Cadastro",
+                UsuarioEmail = ObterUsuarioSession(),
+                UsuarioNome = ObterUsuarioNomeSession()
+            });
         }
 
         public IActionResult CadastrarCliente(IFormCollection form)
@@ -21,17 +26,25 @@ namespace MCBONALDSMVC.Controllers
             ViewData["Action"] = "Cadastro";
             try
             {
-                Cliente cliente = new Cliente(form["nome"], form["endereco"], form["telefone"], form["senha"], form["email"], DateTime.Parse(form["data-nascimento"])); 
-                clienteRepositariy.Inserir(cliente);
-                return View("Sucesso");
+                Cliente cliente = new Cliente(form["nome"], form["endereco"], form["telefone"], form["senha"], form["email"], DateTime.Parse(form["data-nascimento"]));
+                clienteRepository.Inserir(cliente);
+                return View("Sucesso", new BaseViewModel()
+                {
+                    NomeView = "Cadastro",
+                    UsuarioEmail = ObterUsuarioSession(),
+                    UsuarioNome = ObterUsuarioNomeSession()
+                });
             }
-            catch(Exception e)
+            catch (Exception e)
             {
-            System.Console.WriteLine(e.StackTrace);
-                return View("Erro");
+                System.Console.WriteLine(e.StackTrace);
+                return View("Erro", new BaseViewModel()
+                {
+                    NomeView = "Cadastro",
+                    UsuarioEmail = ObterUsuarioSession(),
+                    UsuarioNome = ObterUsuarioNomeSession()
+                });
             }
-
         }
-        
     }
 }
